@@ -1,19 +1,23 @@
-// explain the code: This is a simple component that will be used to provide the context to the child components.
-// 'use client' is a comment that is used to tell the bundler that this file should only be included in the client bundle.
+// providers is only run on the client side for one time,
+// and it is used to enable the entire application with function of the ThemeProvider and Toaster components.
 "use client";
 
 import React from "react";
 import { ThemeProvider } from "./theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      {children}
-    </ThemeProvider>
+    <>
+      <Toaster />
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
+    </>
   );
 }
 

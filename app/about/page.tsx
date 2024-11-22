@@ -10,7 +10,9 @@ case using prisma
 // // why doing crud with db need to use async and await?
 // // because it is a promise - based library that uses async and await to interact with the database.
 */
+
 function AboutPage() {
-  <div>AboutPage</div>;
+  return <div>AboutPage</div>;
 }
+
 export default AboutPage;
