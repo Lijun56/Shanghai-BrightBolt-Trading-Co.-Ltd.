@@ -26,3 +26,20 @@ Reading search parameters through useSearchParams() without a Suspense boundary 
 refer to navsearch
 ## 2. suspense async loading
 In React, Suspense is used to handle the loading state of components that rely on asynchronous data fetching. refer to products homepage
+
+
+# supabase for upload photos
+* supabase create bucket 
+* supabase SDK and api setup
+
+
+# supabase sync the delete function
+delete func in admin/products/page->toast and delete ->sync the supabase(need helper function)
+
+# favorite functionality
+1. revise the datastructure in backend in schema.prisma page
+2. npx prisma db push, npx prisma studio
+   1. to seed the data : node prisma/seed
+3. toggle button->toggle form (formcontainer)-> toogle action and change icon(CardSubmitButton)
+    1. toogle fav button: first fetch all fav id
+    2. toogle fav form: pass to formcontainer and call toggleFavoriteAction (create or delete a favorite based on the favoriteId), and change CardSubmitButton UIicon
