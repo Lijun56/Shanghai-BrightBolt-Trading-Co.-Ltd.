@@ -194,6 +194,13 @@ export const updateProductImageAction = async (
   }
 };
 
+/*
+***
+***
+following function is about favorite products
+***
+***
+*/
 // fetchFavoriteId for favtogglebutton.tsx, 
 // how: get the favorite id of a product if it exists, otherwise return null, so that the toggleFavoriteAction function can decide whether to create or delete a favorite
 export const fetchFavoriteId = async ({ productId }: { productId: string }) => {
@@ -252,3 +259,24 @@ export const fetchUserFavorites = async () => {
   });
   return favorites;
 };
+
+
+/*
+***
+***
+following function is about user review
+***
+***
+*/
+export const createReviewAction = async (
+  prevState: any,
+  formData: FormData
+) => {
+  return { message: 'review submitted successfully' };
+};
+
+export const fetchProductReviews = async () => {};
+export const fetchProductReviewsByUser = async () => {};
+export const deleteReviewAction = async () => {};
+export const findExistingReview = async () => {};
+export const fetchProductRating = async () => {};
