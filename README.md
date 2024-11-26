@@ -43,3 +43,7 @@ delete func in admin/products/page->toast and delete ->sync the supabase(need he
 3. toggle button->toggle form (formcontainer)-> toogle action and change icon(CardSubmitButton)
     1. toogle fav button: first fetch all fav id
     2. toogle fav form: pass to formcontainer and call toggleFavoriteAction (create or delete a favorite based on the favoriteId), and change CardSubmitButton UIicon
+
+
+# deployment
+vercel: copy env and env.local key as env vars
