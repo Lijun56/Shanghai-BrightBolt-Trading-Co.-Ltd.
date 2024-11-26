@@ -38,8 +38,11 @@ delete func in admin/products/page->toast and delete ->sync the supabase(need he
 
 # favorite functionality
 1. revise the datastructure in backend in schema.prisma page
-2. npx prisma db push, npx prisma studio
+2. npx prisma generate, npx prisma db push, npx prisma studio
    1. to seed the data : node prisma/seed
+   2. npx prisma generate: Generates the Prisma Client based on your schema.
+   3. npx prisma db push: Applies changes in your Prisma schema to your database schema.
+   4. npx prisma studio: Opens a web-based GUI for interacting with your database.
 3. toggle button->toggle form (formcontainer)-> toogle action and change icon(CardSubmitButton)
     1. toogle fav button: first fetch all fav id
     2. toogle fav form: pass to formcontainer and call toggleFavoriteAction (create or delete a favorite based on the favoriteId), and change CardSubmitButton UIicon
@@ -47,3 +50,20 @@ delete func in admin/products/page->toast and delete ->sync the supabase(need he
 
 # deployment
 vercel: copy env and env.local key as env vars
+
+
+# reviews system:
+   1. reviews page under certain products
+   2. reviews page under user
+   3. write reviews to db 
+   4. restrict to review for second time 
+
+# cart and cart items 
+   1. cart item column && third column->124item list 
+   2. cartTotals
+
+# database(https://dbdiagram.io/d/67463ea6e9daa85acacf8216)
+<img src="assets/store_db.png">
+
+- Deletion cascades are configured for Favorite, Review, and CartItem models.
+- If a Product is deleted, all related favorites, reviews, and cart items are automatically removed to maintain database integrity.
