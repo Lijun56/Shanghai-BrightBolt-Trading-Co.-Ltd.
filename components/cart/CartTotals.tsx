@@ -18,9 +18,9 @@ function CartTotals({ cart }: { cart: Cart }) {
           <CartTotalRow label="Order Total" amount={orderTotal} lastRow />
         </CardTitle>
       </Card>
-      {/* <FormContainer action={createOrderAction}> */}
-      {/* <SubmitButton text="Place Order" className="w-full mt-8" /> */}
-      {/* </FormContainer> */}
+      <FormContainer action={createOrderAction}>
+        <SubmitButton text="Place Order" className="w-full mt-8" />
+      </FormContainer>
     </div>
   );
 }

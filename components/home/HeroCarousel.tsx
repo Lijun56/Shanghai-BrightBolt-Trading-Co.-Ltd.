@@ -9,8 +9,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import hero1 from "@/assets/imgs/Bolt.jpg";
 import hero2 from "@/assets/imgs/ThreadSocket.jpg";
+import hero3 from "@/assets/imgs/staff2.jpg";
 
-const carouselImages = [hero1, hero2];
+const carouselImages = [hero1, hero2, hero3];
 
 function HeroCarousel() {
   return (
