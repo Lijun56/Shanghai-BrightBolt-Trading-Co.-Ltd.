@@ -21,7 +21,7 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
     <section>
       <BreadCrumbs name={product.name} />
       <div className="mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
-        {/* IMAGE FIRST COL */}
+        {/* images (as hero) FIRST COL */}
         <div className="relative h-full">
           <Image
             src={image}

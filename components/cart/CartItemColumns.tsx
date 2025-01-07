@@ -25,10 +25,12 @@ export const SecondColumn = ({
   name,
   company,
   productId,
+  type,
 }: {
   name: string;
   company: string;
   productId: string;
+  type: string;
 }) => {
   return (
     <div className=" sm:w-48">
@@ -36,6 +38,7 @@ export const SecondColumn = ({
         <h3 className="capitalize font-medium hover:underline">{name}</h3>
       </Link>
       <h4 className="mt-2 capitalize text-xs">{company}</h4>
+      <h4 className="mt-2 capitalize text-xs">{type}</h4>
     </div>
   );
 };

@@ -7,11 +7,29 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import hero1 from "@/assets/imgs/Bolt.jpg";
-import hero2 from "@/assets/imgs/ThreadSocket.jpg";
-import hero3 from "@/assets/imgs/staff2.jpg";
+import hero1 from "@/assets/imgs/factory/factory1.jpeg";
+import hero2 from "@/assets/imgs/factory/factory2.jpeg";
+import hero3 from "@/assets/imgs/factory/factory3.jpeg";
+import hero4 from "@/assets/imgs/factory/factory4.jpeg";
+import hero5 from "@/assets/imgs/factory/factory5.jpeg";
+import hero6 from "@/assets/imgs/factory/factory6.jpeg";
+import hero7 from "@/assets/imgs/factory/factory7.jpeg";
+import hero8 from "@/assets/imgs/factory/factory8.jpeg";
+import hero9 from "@/assets/imgs/factory/factory9.jpeg";
+import hero10 from "@/assets/imgs/factory/factory10.jpeg";
 
-const carouselImages = [hero1, hero2, hero3];
+const carouselImages = [
+  hero1,
+  hero2,
+  hero3,
+  hero4,
+  hero5,
+  hero6,
+  hero7,
+  hero8,
+  hero9,
+  hero10,
+];
 
 function HeroCarousel() {
   return (

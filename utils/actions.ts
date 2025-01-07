@@ -70,6 +70,20 @@ export const createProductAction = async (
   redirect('/admin/products');
 };
 
+export const fetchProductTypes = async (productId: string) => {
+  const types = await db.productType.findMany({
+    where: {
+      productId: productId,
+    },
+    select: {
+      type: true,
+    },
+    orderBy: {
+      type: 'asc',
+    },
+  });
+  return types.map(t => t.type);
+};
 
 export const fetchFeaturedProducts = async () => {
   const products = await db.product.findMany({
@@ -452,15 +466,18 @@ const updateOrCreateCartItem = async ({
   productId,
   cartId,
   amount,
+  type,
 }: {
   productId: string;
   cartId: string;
   amount: number;
+  type: string;
 }) => {
   let cartItem = await db.cartItem.findFirst({
     where: {
       productId,
       cartId,
+      type,
     },
   });
 
@@ -475,7 +492,7 @@ const updateOrCreateCartItem = async ({
     });
   } else {
     cartItem = await db.cartItem.create({
-      data: { amount, productId, cartId },
+      data: { amount, productId, cartId, type},
     });
   }
 };
@@ -524,10 +541,11 @@ export const addToCartAction = async (prevState: any, formData: FormData) => {
   const user = await getAuthUser();
   try {
     const productId = formData.get('productId') as string;
+    const type = formData.get('type') as string;
     const amount = Number(formData.get('amount'));
     await fetchProduct(productId);
     const cart = await fetchOrCreateCart({ userId: user.id });
-    await updateOrCreateCartItem({ productId, cartId: cart.id, amount });
+    await updateOrCreateCartItem({ productId, cartId: cart.id, amount, type });
     await updateCart(cart);
   } catch (error) {
     return renderError(error);

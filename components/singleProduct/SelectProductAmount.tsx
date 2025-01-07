@@ -43,7 +43,7 @@ function SelectProductAmount(
           <SelectValue placeholder={amount} />
         </SelectTrigger>
         <SelectContent>
-          {Array.from({ length: cartItem ? amount + 10 : 10 }, (_, index) => {
+          {Array.from({ length: cartItem ? amount + 10 : 100 }, (_, index) => {
             const selectValue = (index + 1).toString();
             return (
               <SelectItem key={index} value={selectValue}>

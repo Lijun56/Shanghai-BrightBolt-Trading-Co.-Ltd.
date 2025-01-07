@@ -26,3 +26,15 @@ import { Prisma } from '@prisma/client';
 export type CartItemWithProduct = Prisma.CartItemGetPayload<{
   include: { product: true };
 }>;
+
+export type ProductSpec = {
+  size: string;
+  pitch: string;
+  length: string;
+};
+
+export type GroupedSpecs = {
+  [size: string]: {
+    [pitch: string]: string[];
+  };
+};
